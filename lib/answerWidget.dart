@@ -5,13 +5,18 @@ class AnswerWidget extends StatelessWidget {
 
   final void Function()? answerQuestion;
 
-  AnswerWidget(this.answerQuestion);
+  final String? text;
+
+  AnswerWidget(this.answerQuestion,this.text);
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: answerQuestion,
-        child: Text('Answer 1')
+    return Container(
+      width: double.infinity,
+      child: ElevatedButton(
+          onPressed: answerQuestion,
+          child: Text(text!)
+      ),
     );
   }
 }
